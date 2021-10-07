@@ -1,0 +1,23 @@
+    <div class="container">
+      <div class="row">
+        Actors
+        <div class="col">
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of actorsDB; let i = index"
+            [ngClass]="{'active': selectedActorIndex == i}" 
+              (click)="setActorIndex(i)">{{item.name}}</li>
+      </ul>
+        </div>
+        Movies
+        <div class="col">
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of movieDB; let i = index"
+            [ngClass]="{'active': selectedMovieIndex == i}" 
+              (click)="setMovieIndex(i)">{{item.title}}</li>
+      </ul>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-primary" (click)="onAddActorToMovie()">Submit</button>
+        </div>
+      </div>
+    </div>
